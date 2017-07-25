@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
-MAINTAINER Haris Amin <aminharis7@gmail.com>
-
-# https://hub.docker.com/r/swiftdocker/swift/~/dockerfile/
+MAINTAINER Matthew Burke <matthew@bluedino.net>
+# based on Docker image from Haris Amin <aminharis7@gmail.com>
+#                       https://hub.docker.com/r/swiftdocker/swift/~/dockerfile/
 
 # Install related packages and set LLVM 3.6 as the compiler
 RUN apt-get -q update && \
@@ -28,7 +28,7 @@ RUN apt-get -q update && \
 
 # Everything up to here should cache nicely between Swift versions, assuming dev dependencies change little
 ENV SWIFT_BRANCH=swift-4.0-branch \
-    SWIFT_VERSION=swift-4.0-DEVELOPMENT-SNAPSHOT-2017-07-13-a \
+    SWIFT_VERSION=swift-4.0-DEVELOPMENT-SNAPSHOT-2017-07-24-a \
     SWIFT_PLATFORM=ubuntu16.04 \
     PATH=/usr/bin:$PATH
 
